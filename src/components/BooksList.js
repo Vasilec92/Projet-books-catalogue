@@ -1,13 +1,16 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import BookCard from "./BookCard.js";
 
 const BooksList = ({ data }) => {
-  const [books, setBooks] = useState(data);
+  const [books, setBooks] = useState([]);
+  useEffect(() => {
+    setBooks(data);
+  }, [data]);
 
   return (
     <div className="wrapper">
       {books?.map((el, idx) => (
-        <BookCard title={el.title} author={el.author} id={el.id} key={idx} />
+        <BookCard key={idx} book={el} />
       ))}
     </div>
   );

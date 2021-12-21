@@ -1,10 +1,11 @@
 import React from "react";
 
 import TableBook from "../components/TableBook.js";
-const Admin = ({ data }) => {
+
+const Admin = () => {
   return (
     <div>
-      <TableBook data={data} />
+      <TableBook />
     </div>
   );
 };

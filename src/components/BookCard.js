@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-const BookCard = ({ title, author, id }) => {
+const BookCard = ({ book }) => {
   return (
     <div className="card">
       <div className="card__body">
@@ -9,10 +9,11 @@ const BookCard = ({ title, author, id }) => {
           className="card__image"
           alt="book cover"
         />
-        <h2 className="card__title">{title}</h2>
-        <p className="card__description">{author}</p>
+        <h2 className="card__title">{book.title}</h2>
+        <p className="card__description">{book.authors.first_name}</p>
+        <p className="card__description">{book.authors.last_name}</p>
       </div>
-      <Link to={`/book/${id}`} className="card__btn">
+      <Link to={`/book/${book.id}`} className="card__btn">
         More details
       </Link>
     </div>
